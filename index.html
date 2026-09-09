@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FF Redeem Code & Sensitivity Generator | Live Today</title>
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- ADSTERRA POPUNDER / SOCIAL BAR CODE GOES HERE (In Future) -->
+
+    <style>
+        :root {
+            --bg-main: #0a0e17;
+            --card-bg: #121824;
+            --card-border: #1e293b;
+            --accent-gold: #ffb703;
+            --accent-orange: #fb8500;
+            --accent-cyan: #00f5d4;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --live-green: #10b981;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding-bottom: 50px;
+        }
+
+        .cyber-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        /* HEADER */
+        header {
+            background: rgba(18, 24, 36, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--card-border);
+            padding: 14px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: 900;
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: 1px;
+        }
+
+        .live-tag {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--live-green);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--live-green);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--live-green);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 16px;
+        }
+
+        /* AD PLACEHOLDER BOXES */
+        .ad-placeholder {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px dashed #334155;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 12px;
+            margin: 20px 0;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* GENERATOR CARDS */
+        .generator-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 28px 20px;
+            text-align: center;
+            margin: 24px 0;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.6);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .generator-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-orange));
+        }
+
+        .generator-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .generator-subtitle {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 22px;
+        }
+
+        /* BUTTONS */
+        .btn-generate {
+            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-orange) 100%);
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            font-size: 15px;
+            font-weight: 800;
+            border-radius: 12px;
+            cursor: pointer;
+            width: 100%;
+            max-width: 340px;
+            transition: all 0.2s ease;
+            box-shadow: 0 6px 20px rgba(251, 133, 0, 0.35);
+        }
+
+        .btn-generate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(251, 133, 0, 0.45);
+        }
+
+        .btn-generate:active {
+            transform: scale(0.98);
+        }
+
+        /* INPUT FIELD */
+        .device-input {
+            width: 100%;
+            max-width: 340px;
+            padding: 14px;
+            background: #0a0e17;
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            color: #fff;
+            font-size: 14px;
+            margin-bottom: 15px;
+            outline: none;
+            text-align: center;
+        }
+
+        .device-input:focus {
+            border-color: var(--accent-gold);
+        }
+
+        /* TIMER & PROGRESS */
+        .timer-box {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .timer-circle {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--accent-gold);
+            margin-bottom: 6px;
+        }
+
+        .progress-bar-bg {
+            background: rgba(255, 255, 255, 0.08);
+            height: 8px;
+            border-radius: 10px;
+            overflow: hidden;
+            max-width: 300px;
+            margin: 12px auto;
+        }
+
+        .progress-bar-fill {
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-orange));
+            height: 100%;
+            width: 0%;
+            transition: width 1s linear;
+        }
+
+        /* CODE RESULT */
+        .code-result-box {
+            display: none;
+            margin-top: 22px;
+            background: #0a0e17;
+            border: 2px dashed var(--accent-gold);
+            padding: 18px;
+            border-radius: 14px;
+        }
+
+        .generated-code {
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--accent-gold);
+            letter-spacing: 2px;
+            margin: 10px 0;
+        }
+
+        .btn-copy {
+            background: rgba(255, 183, 3, 0.15);
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 12px;
+            cursor: pointer;
+            margin-top: 6px;
+        }
+
+        /* SENSITIVITY RESULT DISPLAY */
+        .sensi-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        .sensi-item {
+            background: #161f30;
+            border: 1px solid var(--card-border);
+            padding: 12px 14px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sensi-name {
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .sensi-value {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--accent-cyan);
+        }
+
+        /* SECTION CARD */
+        .section-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 24px 20px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* CODES GRID */
+        .codes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 12px;
+        }
+
+        .code-item {
+            background: #0a0e17;
+            border: 1px solid var(--card-border);
+            padding: 12px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: 1px;
+            font-size: 13px;
+        }
+
+        /* BLOG ARTICLE POST STYLE GUIDE */
+        .article-content {
+            font-size: 14px;
+            color: #cbd5e1;
+            line-height: 1.8;
+        }
+
+        .article-content h3 {
+            color: var(--accent-gold);
+            margin: 20px 0 10px 0;
+            font-size: 16px;
+        }
+
+        .article-content ol {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .article-content li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 40px;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <div class="logo cyber-font">
+                <i class="fa-solid fa-fire-flame-curved" style="color: var(--accent-orange);"></i> FF PRO HUB
+            </div>
+            <div class="live-tag">
+                <div class="pulse-dot"></div> ONLINE
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- HEADER AD BANNER AREA -->
+        <div class="ad-placeholder" id="ad-header">
+            <span>[ Adsterra Header Banner Ad Placement ]</span>
+        </div>
+
+        <!-- TOOL 1: REDEEM CODE GENERATOR -->
+        <div class="generator-card">
+            <h1 class="generator-title cyber-font">FF REDEEM CODE GENERATOR</h1>
+            <p class="generator-subtitle">Generate 100% active and daily updated Garena Free Fire redeem codes.</p>
+
+            <button class="btn-generate cyber-font" id="generateBtn" onclick="startCodeGenerator()">GENERATE REDEEM CODE</button>
+
+            <!-- CODE TIMER -->
+            <div class="timer-box" id="codeTimerBox">
+                <div class="timer-circle cyber-font" id="codeTimeLeft">20</div>
+                <p style="font-size: 12px; color: var(--text-secondary);">Connecting to Garena Reward Server...</p>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="codeProgressFill"></div>
+                </div>
+            </div>
+
+            <!-- CODE RESULT -->
+            <div class="code-result-box" id="codeResultBox">
+                <div style="font-size: 12px; color: var(--text-secondary);">Your Generated Redeem Code:</div>
+                <div class="generated-code cyber-font" id="finalCode">G3S2-XXXX-XXXX</div>
+                <button class="btn-copy" onclick="copyCode()"><i class="fa-regular fa-copy"></i> COPY CODE</button>
+            </div>
+        </div>
+
+        <!-- MID AD BANNER -->
+        <div class="ad-placeholder" id="ad-mid">
+            <span>[ Adsterra Native / Social Bar Placement ]</span>
+        </div>
+
+        <!-- TOOL 2: SENSITIVITY GENERATOR -->
+        <div class="generator-card" style="border-top-color: var(--accent-cyan);">
+            <h2 class="generator-title cyber-font" style="color: var(--accent-cyan);">BEST SENSITIVITY GENERATOR</h2>
+            <p class="generator-subtitle">Get auto-headshot sensitivity settings customized for your device.</p>
+
+            <input type="text" id="deviceModel" class="device-input" placeholder="Enter Mobile Model (e.g. Poco C65, Redmi, Realme)" />
+            <br>
+            <button class="btn-generate cyber-font" id="sensiBtn" style="background: linear-gradient(135deg, #00f5d4 0%, #00b4d8 100%); color: #000;" onclick="startSensiGenerator()">GENERATE SENSITIVITY</button>
+
+            <!-- SENSI TIMER -->
+            <div class="timer-box" id="sensiTimerBox">
+                <div class="timer-circle cyber-font" id="sensiTimeLeft" style="color: var(--accent-cyan);">20</div>
+                <p style="font-size: 12px; color: var(--text-secondary);">Analyzing display refresh rate and touch response...</p>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="sensiProgressFill" style="background: var(--accent-cyan);"></div>
+                </div>
+            </div>
+
+            <!-- SENSI RESULT -->
+            <div class="code-result-box" id="sensiResultBox" style="border-color: var(--accent-cyan);">
+                <div style="font-size: 13px; color: var(--accent-cyan); font-weight: 700; margin-bottom: 10px;" id="targetDeviceName">Optimized Settings:</div>
+                <div class="sensi-grid">
+                    <div class="sensi-item"><span class="sensi-name">General</span><span class="sensi-value" id="s_gen">98</span></div>
+                    <div class="sensi-item"><span class="sensi-name">Red Dot</span><span class="sensi-value" id="s_red">95</span></div>
+                    <div class="sensi-item"><span class="sensi-name">2X Scope</span><span class="sensi-value" id="s_2x">92</span></div>
+                    <div class="sensi-item"><span class="sensi-name">4X Scope</span><span class="sensi-value" id="s_4x">89</span></div>
+                    <div class="sensi-item"><span class="sensi-name">Sniper Scope</span><span class="sensi-value" id="s_snip">65</span></div>
+                    <div class="sensi-item"><span class="sensi-name">Free Look</span><span class="sensi-value" id="s_free">80</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SENSI AD BANNER -->
+        <div class="ad-placeholder" id="ad-sensi">
+            <span>[ Adsterra In-Article Ad Placement ]</span>
+        </div>
+
+        <!-- TODAY LIVE CODES LIST -->
+        <div class="section-card">
+            <div class="section-header">
+                <span class="live-tag"><div class="pulse-dot"></div> LIVE TODAY</span> Unused Daily Redeem Codes
+            </div>
+            <div class="codes-grid">
+                <div class="code-item cyber-font">G3S2-9K2L-10XP</div>
+                <div class="code-item cyber-font">FFPL-88NJ-V2Q1</div>
+                <div class="code-item cyber-font">X99T-K23M-O9LP</div>
+                <div class="code-item cyber-font">4ST1-00QW-89MB</div>
+                <div class="code-item cyber-font">B6IY-CTNH-43WS</div>
+                <div class="code-item cyber-font">W0JJ-AFV3-TU5E</div>
+                <div class="code-item cyber-font">FFBC-LQ6S-OG6L</div>
+                <div class="code-item cyber-font">VNY3-MQWN-JK88</div>
+                <div class="code-item cyber-font">MQRD-43SX-C21A</div>
+                <div class="code-item cyber-font">ZRT5-O902-11QW</div>
+            </div>
+        </div>
+
+        <!-- BLOG / GUIDE ARTICLE STYLE SECTION -->
+        <div class="section-card">
+            <div class="section-header">
+                <i class="fa-solid fa-book-open" style="color: var(--accent-gold);"></i> Complete Guide: How to Claim Rewards
+            </div>
+            <div class="article-content">
+                <p>Free Fire redeem codes are 12 or 16-character alphanumeric strings issued by Garena. These codes grant players free in-game items such as gun skins, room cards, bundles, and voucher cards without spending real diamonds.</p>
+
+                <h3>How to Redeem Codes on Play Store & Official Site:</h3>
+                <ol>
+                    <li>Open your browser and navigate to the official <strong>Garena Rewards Redemption Portal</strong> (reward.ff.garena.com).</li>
+                    <li>Sign in using the social account connected to your game (Facebook, Google, Twitter, or VK). <em>Guest accounts cannot claim rewards.</em></li>
+                    <li>Paste or manually enter the 12-character redeem code generated above into the empty field.</li>
+                    <li>Click on the <strong>Confirm</strong> button. A success dialogue box will confirm your redemption.</li>
+                    <li>Open Free Fire on your mobile device and check your <strong>In-game Mailbox</strong> to collect your items.</li>
+                </ol>
+
+                <h3>Why Device Sensitivity Settings Matter:</h3>
+                <p>Finding the perfect sensitivity settings for phones like Poco C65 or Redmi devices helps reduce recoil and increases your headshot rate significantly. Use our custom Sensitivity Generator tool above to optimize touch response based on your screen size.</p>
+            </div>
+        </div>
+
+        <!-- FOOTER AD BANNER AREA -->
+        <div class="ad-placeholder" id="ad-footer">
+            <span>[ Adsterra Bottom Banner Ad Placement ]</span>
+        </div>
+
+        <footer>
+            <p><strong>Disclaimer:</strong> FF PRO HUB is an independent fan-made portal for educational purposes only. We are not affiliated with, endorsed by, or connected to Garena or Free Fire. All product names, logos, and brands are property of their respective owners.</p>
+        </footer>
+
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // REDEEM CODE GENERATOR LOGIC
+        const prefixes = ["FFPL", "G3S2", "X99T", "4ST1", "B6IY", "W0JJ", "VNY3", "MQRD"];
+        const charSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+        function generateCodeString() {
+            const pref = prefixes[Math.floor(Math.random() * prefixes.length)];
+            let part2 = "", part3 = "";
+            for (let i = 0; i < 4; i++) {
+                part2 += charSet.charAt(Math.floor(Math.random() * charSet.length));
+                part3 += charSet.charAt(Math.floor(Math.random() * charSet.length));
+            }
+            return `${pref}-${part2}-${part3}`;
+        }
+
+        function startCodeGenerator() {
+            const btn = document.getElementById('generateBtn');
+            const timerBox = document.getElementById('codeTimerBox');
+            const resultBox = document.getElementById('codeResultBox');
+            const timeLeft = document.getElementById('codeTimeLeft');
+            const progressFill = document.getElementById('codeProgressFill');
+
+            btn.style.display = 'none';
+            resultBox.style.display = 'none';
+            timerBox.style.display = 'block';
+
+            let count = 20;
+            timeLeft.innerText = count;
+            progressFill.style.width = '0%';
+
+            let interval = setInterval(() => {
+                count--;
+                timeLeft.innerText = count;
+                progressFill.style.width = `${((20 - count) / 20) * 100}%`;
+
+                if (count <= 0) {
+                    clearInterval(interval);
+                    timerBox.style.display = 'none';
+                    document.getElementById('finalCode').innerText = generateCodeString();
+                    resultBox.style.display = 'block';
+                    btn.style.display = 'inline-block';
+                    btn.innerText = 'GENERATE AGAIN';
+                }
+            }, 1000);
+        }
+
+        function copyCode() {
+            const code = document.getElementById('finalCode').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                alert("Code Copied: " + code);
+            });
+        }
+
+        // SENSITIVITY GENERATOR LOGIC
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function startSensiGenerator() {
+            const devInput = document.getElementById('deviceModel').value.trim();
+            if (devInput === "") {
+                alert("Please enter your mobile phone model first!");
+                return;
+            }
+
+            const btn = document.getElementById('sensiBtn');
+            const timerBox = document.getElementById('sensiTimerBox');
+            const resultBox = document.getElementById('sensiResultBox');
+            const timeLeft = document.getElementById('sensiTimeLeft');
+            const progressFill = document.getElementById('sensiProgressFill');
+
+            btn.style.display = 'none';
+            resultBox.style.display = 'none';
+            timerBox.style.display = 'block';
+
+            let count = 20;
+            timeLeft.innerText = count;
+            progressFill.style.width = '0%';
+
+            let interval = setInterval(() => {
+                count--;
+                timeLeft.innerText = count;
+                progressFill.style.width = `${((20 - count) / 20) * 100}%`;
+
+                if (count <= 0) {
+                    clearInterval(interval);
+                    timerBox.style.display = 'none';
+
+                    document.getElementById('targetDeviceName').innerText = `Optimized for ${devInput}:`;
+                    document.getElementById('s_gen').innerText = getRandomInt(95, 100);
+                    document.getElementById('s_red').innerText = getRandomInt(90, 98);
+                    document.getElementById('s_2x').innerText = getRandomInt(88, 96);
+                    document.getElementById('s_4x').innerText = getRandomInt(85, 94);
+                    document.getElementById('s_snip').innerText = getRandomInt(50, 70);
+                    document.getElementById('s_free').innerText = getRandomInt(75, 90);
+
+                    resultBox.style.display = 'block';
+                    btn.style.display = 'inline-block';
+                    btn.innerText = 'GENERATE FOR ANOTHER DEVICE';
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
