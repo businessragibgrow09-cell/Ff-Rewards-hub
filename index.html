@@ -500,6 +500,46 @@
 
     </div>
 
+    <!-- FIREBASE REAL-TIME TRACKING SCRIPT -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getFirestore, doc, updateDoc, increment, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+        // आपका Firebase Config
+        const firebaseConfig = {
+            apiKey: "AIzaSyCs5X9luNPAYqEjVsk5PYh1cZrp-y4vcgw",
+            authDomain: "ff-dashboard-e96dd.firebaseapp.com",
+            projectId: "ff-dashboard-e96dd",
+            storageBucket: "ff-dashboard-e96dd.firebasestorage.app",
+            messagingSenderId: "710937510821",
+            appId: "1:710937510821:web:24542defaad7f8349cde4c",
+            measurementId: "G-JESJEE3J8X"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // URL से Partner ID निकालना (?ref=partner_name)
+        const urlParams = new URLSearchParams(window.location.search);
+        const ref = urlParams.get('ref') || 'direct';
+
+        // ग्लोबल फ़ंक्शन ताकि आपके बटन इसे कॉल कर सकें
+        window.trackClick = async function() {
+            try {
+                const partnerRef = doc(db, "partners", ref);
+                const partnerSnap = await getDoc(partnerRef);
+
+                if (partnerSnap.exists()) {
+                    await updateDoc(partnerRef, { clicks: increment(1) });
+                } else {
+                    await setDoc(partnerRef, { name: ref, clicks: 1 }, { merge: true });
+                }
+            } catch (e) {
+                console.error("Tracking Error:", e);
+            }
+        };
+    </script>
+
     <!-- JAVASCRIPT LOGIC -->
     <script>
         // REDEEM CODE GENERATOR LOGIC
@@ -530,6 +570,9 @@
         }
 
         function startCodeGenerator() {
+            // Firebase Real-time Click Count trigger
+            if(window.trackClick) window.trackClick();
+
             const btn = document.getElementById('generateBtn');
             const timerBox = document.getElementById('codeTimerBox');
             const resultBox = document.getElementById('codeResultBox');
@@ -581,6 +624,9 @@
                 alert("Please enter your mobile phone model first!");
                 return;
             }
+
+            // Firebase Real-time Click Count trigger
+            if(window.trackClick) window.trackClick();
 
             const btn = document.getElementById('sensiBtn');
             const timerBox = document.getElementById('sensiTimerBox');
