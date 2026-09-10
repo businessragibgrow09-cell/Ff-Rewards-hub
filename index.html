@@ -9,6 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- ADSTERRA POPUNDER & SOCIAL BAR MAIN SCRIPT -->
+    <script src="https://pl31262950.profitableratecpmnetwork.com/c1/e7/93/c1e7934ad09388fbed737a4027b5d772.js"></script>
+
     <style>
         :root {
             --bg-main: #0a0e17;
@@ -105,19 +108,20 @@
             padding: 0 16px;
         }
 
-        /* AD PLACEHOLDER BOXES */
-        .ad-placeholder {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px dashed #334155;
-            border-radius: 12px;
-            padding: 15px;
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 12px;
-            margin: 20px 0;
-            min-height: 90px;
+        /* AD CONTAINERS */
+        .ad-container-300 {
+            margin-top: 20px;
             display: flex;
+            justify-content: center;
             align-items: center;
+            min-height: 250px;
+            width: 100%;
+        }
+
+        .native-ad-box {
+            margin: 24px 0;
+            width: 100%;
+            display: flex;
             justify-content: center;
         }
 
@@ -373,11 +377,6 @@
 
     <div class="container">
 
-        <!-- HEADER AD BANNER AREA -->
-        <div class="ad-placeholder" id="ad-header">
-            <span>[ Adsterra Header Banner Ad Placement ]</span>
-        </div>
-
         <!-- TOOL 1: REDEEM CODE GENERATOR -->
         <div class="generator-card">
             <h1 class="generator-title cyber-font">FF REDEEM CODE GENERATOR</h1>
@@ -400,11 +399,20 @@
                 <div class="generated-code cyber-font" id="finalCode">G3S2-XXXX-XXXX</div>
                 <button class="btn-copy" onclick="copyCode()"><i class="fa-regular fa-copy"></i> COPY CODE</button>
             </div>
-        </div>
 
-        <!-- MID AD BANNER -->
-        <div class="ad-placeholder" id="ad-mid">
-            <span>[ Adsterra Native / Social Bar Placement ]</span>
+            <!-- ADSTERRA 300x250 BANNER AD (BOX KE NEECHE) -->
+            <div class="ad-container-300" id="adBox">
+                <script type="text/javascript">
+                    atOptions = {
+                        'key' : '3e4b8818b403004c3731ddf12e57ab77',
+                        'format' : 'iframe',
+                        'height' : 250,
+                        'width' : 300,
+                        'params' : {}
+                    };
+                </script>
+                <script type="text/javascript" src="https://www.highrevenueformat.com/3e4b8818b403004c3731ddf12e57ab77/invoke.js"></script>
+            </div>
         </div>
 
         <!-- TOOL 2: SENSITIVITY GENERATOR -->
@@ -439,9 +447,10 @@
             </div>
         </div>
 
-        <!-- SENSI AD BANNER -->
-        <div class="ad-placeholder" id="ad-sensi">
-            <span>[ Adsterra In-Article Ad Placement ]</span>
+        <!-- ADSTERRA NATIVE CONTAINER AD -->
+        <div class="native-ad-box">
+            <script async="async" data-cfasync="false" src="https://pl31268760.profitableratecpmnetwork.com/b39704925302ef35403e7daadf711f5b/invoke.js"></script>
+            <div id="container-b39704925302ef35403e7daadf711f5b"></div>
         </div>
 
         <!-- TODAY LIVE CODES LIST -->
@@ -485,11 +494,6 @@
             </div>
         </div>
 
-        <!-- FOOTER AD BANNER AREA -->
-        <div class="ad-placeholder" id="ad-footer">
-            <span>[ Adsterra Bottom Banner Ad Placement ]</span>
-        </div>
-
         <footer>
             <p><strong>Disclaimer:</strong> FF PRO HUB is an independent fan-made portal for educational purposes only. We are not affiliated with, endorsed by, or connected to Garena or Free Fire. All product names, logos, and brands are property of their respective owners.</p>
         </footer>
@@ -512,12 +516,28 @@
             return `${pref}-${part2}-${part3}`;
         }
 
+        function refreshBannerAd() {
+            const adBox = document.getElementById("adBox");
+            if (adBox) {
+                const oldScript = adBox.querySelector('script[src*="invoke.js"]');
+                if (oldScript) {
+                    const newScript = document.createElement('script');
+                    newScript.type = 'text/javascript';
+                    newScript.src = oldScript.src.split('?')[0] + '?refresh=' + new Date().getTime();
+                    adBox.appendChild(newScript);
+                }
+            }
+        }
+
         function startCodeGenerator() {
             const btn = document.getElementById('generateBtn');
             const timerBox = document.getElementById('codeTimerBox');
             const resultBox = document.getElementById('codeResultBox');
             const timeLeft = document.getElementById('codeTimeLeft');
             const progressFill = document.getElementById('codeProgressFill');
+
+            // Refresh Banner Ad on Click
+            refreshBannerAd();
 
             btn.style.display = 'none';
             resultBox.style.display = 'none';
@@ -568,6 +588,9 @@
             const timeLeft = document.getElementById('sensiTimeLeft');
             const progressFill = document.getElementById('sensiProgressFill');
 
+            // Refresh Banner Ad on Click
+            refreshBannerAd();
+
             btn.style.display = 'none';
             resultBox.style.display = 'none';
             timerBox.style.display = 'block';
@@ -600,10 +623,5 @@
             }, 1000);
         }
     </script>
-
-    <!-- ADSTERRA ADS CODE -->
-    <script src="https://pl31262949.profitableratecpmnetwork.com/7a/0d/7d/7a0d7d221517b6bf2d8accf281524c26.js"></script>
-    <script src="https://pl31262950.profitableratecpmnetwork.com/c1/e7/93/c1e7934ad09388fbed737a4027b5d772.js"></script>
-
 </body>
 </html>
